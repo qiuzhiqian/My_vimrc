@@ -54,7 +54,8 @@ set selectmode=mouse,key
 "set t_vb=  
 "set tm=500  
   
-  
+"设置自动路径
+set autochdir  
 "==========================================  
 " show and format  
 "==========================================  
@@ -127,6 +128,8 @@ set statusline=%<%f\ %h%m%r%=%k[%{(&fenc==\"\")?&enc:&fenc}%{(&bomb?\",BOM\":\"\
 "==========================================  
 "colors and fonts  
 "==========================================  
+"选择配色方案(方案通常放在/usr/share/vim/vim80/colors)
+colorscheme evening
 "开启语法高亮  
 syntax enable  
 syntax on  
@@ -142,7 +145,12 @@ autocmd! bufwritepost .vimrc source % " vimrc文件修改之后自动加载。 l
 "==========================================
 "GTags setting
 "==========================================
-let Gtags_VerticalWindow=1    "open windows vitically
+"win和linux的方向规定好像不一致
+if has("win32")
+    let Gtags_VerticalWindow=1    "open windows vitically
+else 
+    let Gtags_VerticalWindow=0    "close windows vitically
+endif
 let Gtags_Auto_Map=1          "use a suggested key-mapping
 let Gtags_Auto_Update=1       "keep tag files up-to-date automatically
 let Gtags_No_Auto_Jump=1      "don't jump to the first tag at the time of search
