@@ -75,7 +75,7 @@ set mat=2
 " 高亮search命中的文本。  
 set hlsearch            
 " 搜索时忽略大小写  
-set ignorecase  
+" set ignorecase  
 " 随着键入即时搜索  
 set incsearch  
 " 有一个或以上大写字母时仍大小写敏感  
@@ -186,4 +186,4 @@ let NERDTreeQuitOnOpen=1
 
 
 nmap <F12> :TlistToggle<CR>
-nmap <F11> :NERDTreeToggle<CR>
+nmap <F9> :NERDTreeToggle<CR>
